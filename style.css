@@ -1,130 +1,99 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #17142a;
-    color: #a1a1a1;
-    line-height: 1.6;
     display: flex;
     justify-content: center;
-    padding: 20px;
-    align-items: center; 
-}
-.about p {
-    font-family: "Chakra Petch", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    color: #a1a1a1;
-
-}
-.about, .experience {
-    max-width: 600px;
-    background-color: #221e3d;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-.tags span {
-    display: inline-block;
-    background-color: #3a3368;
-    padding: 5px 10px;
-    border-radius: 12px;
-    font-size: 0.8em;
-    margin: 5px 10px 0 0;
-    font-family: "Chakra Petch", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #a1a1a1;
+    align-items: center;
+    height: 100vh; /* Full height */
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: 'Exo 2', sans-serif;
+    color: #747474;
 }
 
-.proj-tags span {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 12px;
-    font-size: 0.9em;
-    margin: 5px 10px 0 0;
-    font-family: "Chakra Petch", serif;
-    font-weight: 800;
-    font-style: normal;
-    color: #456ecd;
-}
-.experience .job {
-    margin-bottom: 20px;
-}
-
-.experience .job h3 {
-    color: #a1a1a1;
-    font-size: 0.9em;
-}
-
-.experience .job h2 {
-    font-size: 1.2em;
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.experience .job p {
-    font-size: 0.95em;
-    color: #d1d1d1;
-    margin-bottom: 10px;
-}
-
-.center-text {
-    text-align: center;
-}
-
-.button-container {
+.container {
     display: flex;
-    gap: 10px; /* Space between buttons */
-    margin-top: 5px;
-    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    animation: panIn 1.5s ease-out forwards;
 }
-        
-.custom-button {
-    background-color: #3a3368;
-    color: #a1a1a1;
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-size: 0.9em;
-    border: none;
+
+.image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.text-content {
+    max-width: 400px;
+    text-align: left;
+}
+
+h2 {
+    margin: 0;
+}
+
+.logo-container {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.small-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: rotate(0deg);
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: "Chakra Petch", sans-serif;
-    font-weight: 400;
-    font-style: normal;
 }
 
-.project-custom-button {
-    background-color: #3a3368;
-    color: #a1a1a1;
-    padding: 5px 10px;
-    border-radius: 12px;
-    font-size: 0.8em;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: "Chakra Petch", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+.arrow span {
+    display: block;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
 }
 
-.custom-button:hover {
-    background-color: #2d2753; /* Hover effect */
+.arrow span:nth-child(2) {
+    animation-delay: -0.2s;
 }
 
-h1 {
-  font-family: "Chakra Petch", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+.arrow span:nth-child(3) {
+    animation-delay: -0.4s;
 }
 
-h5, h3 {
-    font-family: "Chakra Petch", sans-serif;
-  font-weight: 600;
-  font-style: normal;
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
+@keyframes panIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
